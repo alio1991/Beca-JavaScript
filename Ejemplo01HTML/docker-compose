@@ -1,0 +1,8 @@
+version: '3'
+services:
+  apache:
+    image: httpd:2.4-alpine
+    volumes:
+      -"./RUTA_ARCHIVOS_HTML"
+    ports:
+      -80:80
