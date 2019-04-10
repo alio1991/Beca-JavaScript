@@ -1,0 +1,91 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Peliculas</title>
+    <script type="text/javascript" src="js/cargaPelisTabla.js"></script>
+</head>
+<body>
+<header><h1>Gestor Palículas</h1></header>
+    <section>
+        <article>
+                <h1>Registrar películas</h1>
+                <form>
+                    <p>Título</p>
+                    <input 
+                        id="titulo"
+                        type="text" 
+                        name="titulo"
+                        placeholder="Nombre de la película"
+                        required
+                    /><br/>
+                    <p>Director</p>
+                    <input 
+                        id="director"
+                        type="text" 
+                        name="director"
+                        placeholder="Director de la película"
+                        required
+                    /><br/>
+                    <p>COD-ID</p>
+                    <input 
+                        id="cod"
+                        type="text" 
+                        name="id"
+                        placeholder="XXX-00000-ZZ"
+                        required
+                        pattern="[[A-Z]{3}-[0-9]{5}-[A-Z]{2}"
+                    />  <br/>
+
+                    <p>Genero</p>
+                    <select id="genero" name="genero" id="genero">
+                            <option value="drama">Drama</option>
+                            <option value="comedia">Comedia</option>
+                            <option value="ficcion">Ciencia Ficción</option>
+                            <option value="terror">Terror</option>
+                    </select><br/>
+
+                    <p>Fecha publicación</p>
+                    <input 
+                        id="fecha"
+                        type="date" 
+                        value="fecha_publicacion"
+                    /><br/>
+
+                    <p>Valoración</p>
+                    <input 
+                        id="valoracion"
+                        type="range" 
+                        name="valoracion"
+                        min="0" 
+                        max="10" 
+                    /><br/>
+                    <button type="button" onclick="insertaPeli()">Enviar</button>
+                </form>
+        </article>
+    </section>
+    <section>
+            <article>
+
+                    <table>
+                        <thead>
+                            <tr>
+                            <th>COD-ID</th><th>Título</th><th>Director</th><th>Fecha</th><th>Valoración</th><th>Genero</th>
+                            </tr>
+                        </thead>
+                        <tbody id="seccionTbody">
+                            <tr>
+                            <td>ASD-75843-TL</td><td>EL SEÑOR DE LOS COLMILLOS</td><td>PEPE</td><td>FECHA</td><td>9</td><td>TERROR</td>
+                            </tr>
+                            <tr>
+                            <td>EUJ-23865-IF</td><td>HARRY DESPELOTER</td><td>JUAN</td><td>FECHA</td><td>8</td><td>DRAMA</td>
+                            </tr>
+                            <tr>
+                            <td>VEY-64377-OP</td><td>Ñ-MEN</td><td>XPILBRG</td><td>FECHA</td><td>3</td><td>COMEDIA</td>
+                            </tr>
+                        </tbody>
+                    </table>
+    
+            </article>
+    </section>
+</body>
+</html>
