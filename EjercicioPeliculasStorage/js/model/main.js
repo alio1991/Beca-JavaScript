@@ -1,17 +1,9 @@
-var indiceModificar;
-var peliculas = [];
 
-function Peli(){
-}
-Peli.prototype.titulo="";
-Peli.prototype.director="";
-Peli.prototype.cod="";
-Peli.prototype.genero="";
-Peli.prototype.fecha="";
-Peli.prototype.valoracion="";
+var indiceModificar; //Para realizar correctamente la actualización del campo
+var peliculas = []; //Almacena los objetos Pelicula creados
+var tr; //Auxiliar para saber en que tr acual se están insertando los datos
 
-
-Peli.prototype.setAtributos = function(titulo,director,cod,genero,fecha,valoracion){
+Pelicula.prototype.setAtributos = function(titulo,director,cod,genero,fecha,valoracion){
     this.titulo=titulo;
     this.director=director;
     this.cod=cod;
@@ -19,6 +11,7 @@ Peli.prototype.setAtributos = function(titulo,director,cod,genero,fecha,valoraci
     this.fecha=fecha;
     this.valoracion=valoracion;
 }
+
 
 function insertaPeli(){
     var titulo = document.getElementById("titulo");
@@ -28,7 +21,7 @@ function insertaPeli(){
     var fecha = document.getElementById("fecha");
     var valoracion = document.getElementById("valoracion");
 
-    var peli = new Peli();
+    var peli = new Pelicula();
     peli.setAtributos(titulo.value,director.value,cod.value,genero.value,fecha.value,valoracion.value);
     peliculas.push(peli);
     escribirPeli(peli);
@@ -47,34 +40,16 @@ function imprimeTabla(){
 function escribirPeli(peli){
 
     let tbody = document.getElementById("seccionTbody");
-    let tr = document.createElement("tr");
-    tr.className="regenerar";
-    let td1 = document.createElement("td");
-    td1.appendChild(document.createTextNode(peli.titulo));
-    tr.appendChild(td1);
-    
-    let td2 = document.createElement("td");
-    td2.appendChild(document.createTextNode(peli.director));
-    tr.appendChild(td2);
+    tr = document.createElement("tr");
 
-    let td3 = document.createElement("td");
-    td3.appendChild(document.createTextNode(peli.cod));
-    tr.appendChild(td3);
+    nuevoTd(peli.titulo);
+    nuevoTd(peli.director);
+    nuevoTd(peli.cod);
+    nuevoTd(peli.genero);
+    nuevoTd(peli.fecha);
+    nuevoTd(peli.valoracion);
 
-    let td4 = document.createElement("td");
-    td4.appendChild(document.createTextNode(peli.genero));
-    tr.appendChild(td4);
-
-    let td5 = document.createElement("td");
-    td5.appendChild(document.createTextNode(peli.fecha));
-    tr.appendChild(td5);
-
-    let td6 = document.createElement("td");
-    td6.appendChild(document.createTextNode(peli.valoracion));
-    tr.appendChild(td6);
- 
     let td = document.createElement("td");
-
 
     let botonE = document.createElement("input");
     botonE.type="button";
@@ -95,6 +70,11 @@ function escribirPeli(peli){
     tbody.appendChild(tr);
 }
 
+function nuevoTd(cont){
+    let td = document.createElement("td");
+    td.appendChild(document.createTextNode(cont));
+    tr.appendChild(td);
+}
 
 function eliminaPeli(a){
     for(let i=0; i<peliculas.length; i++){
@@ -102,12 +82,12 @@ function eliminaPeli(a){
             peliculas.splice(i,1);
         }
     }
-    
+    //console.log(peliculas)
     imprimeTabla();
 }
 
 function modificaPeli(a){
-    //Rellenar los campos con los datos
+
     for(let i=0; i<peliculas.length; i++){
         if(peliculas[i].cod === a){
             document.getElementById('titulo').value=peliculas[i].titulo;
@@ -116,11 +96,9 @@ function modificaPeli(a){
             document.getElementById('genero').value=peliculas[i].genero;
             document.getElementById('fecha').value=peliculas[i].fecha;
             document.getElementById('valoracion').value=peliculas[i].valoracion;
-
             indiceModificar = i;
         }
     }
-    
     //Cambiar boton enviar por modificar
     alternaBoton("mod");
 }
