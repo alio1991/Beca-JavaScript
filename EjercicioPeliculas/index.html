@@ -1,11 +1,12 @@
 <html>
 <head>
     <meta charset="utf-8"/>
+    <link rel="icon" type="image/png" href="favicon.ico" />
     <title>Peliculas</title>
     <script type="text/javascript" src="js/cargaPelisTabla.js"></script>
 </head>
 <body>
-<header><h1>Gestor Palículas</h1></header>
+<header><h1>Gestor Películas</h1></header>
     <section>
         <article>
                 <h1>Registrar películas</h1>
@@ -59,7 +60,7 @@
                         min="0" 
                         max="10" 
                     /><br/>
-                    <button type="button" onclick="insertaPeli()">Enviar</button>
+                    <button id="botonFormulario" type="reset" onclick="insertaPeli()">Enviar</button>
                 </form>
         </article>
     </section>
@@ -69,19 +70,20 @@
                     <table>
                         <thead>
                             <tr>
-                            <th>COD-ID</th><th>Título</th><th>Director</th><th>Fecha</th><th>Valoración</th><th>Genero</th>
+                            <th>COD-ID</th><th>Título</th><th>Director</th><th>Fecha</th><th>Valoración</th><th>Genero</th><th></th>
                             </tr>
                         </thead>
                         <tbody id="seccionTbody">
-                            <tr>
+                            <!--<tr>
                             <td>ASD-75843-TL</td><td>EL SEÑOR DE LOS COLMILLOS</td><td>PEPE</td><td>FECHA</td><td>9</td><td>TERROR</td>
+                            <td><button type="button" onclick="eliminaPeli()">Eliminar</button><button type="button" onclick="modificaPeli()">Modificar</button></td>
                             </tr>
                             <tr>
                             <td>EUJ-23865-IF</td><td>HARRY DESPELOTER</td><td>JUAN</td><td>FECHA</td><td>8</td><td>DRAMA</td>
                             </tr>
                             <tr>
                             <td>VEY-64377-OP</td><td>Ñ-MEN</td><td>XPILBRG</td><td>FECHA</td><td>3</td><td>COMEDIA</td>
-                            </tr>
+                            </tr>-->
                         </tbody>
                     </table>
     
