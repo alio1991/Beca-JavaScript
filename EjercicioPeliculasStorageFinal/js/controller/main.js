@@ -55,13 +55,15 @@ function escribirPeli(peli){
     let td = document.createElement("td");
     let botonE = document.createElement("input");
     botonE.type="button";
-    botonE.value="Eliminar";
+    botonE.value="  Eliminar   ";
+    botonE.setAttribute("class","botonE");
     botonE.setAttribute("data-id",peli.cod);
     botonE.onclick = function() { eliminaPeli(this.getAttribute("data-id")) };
     let botonM = document.createElement("input");
-    botonM.type="button";
+    botonM.setAttribute("class","botonM");
     botonM.setAttribute("data-id",peli.cod);
-    botonM.value="Modificar";
+    botonM.type="button";
+    botonM.value="  Modificar  ";
     botonM.onclick = function() { modificaPeli(this.getAttribute("data-id")) };
     td.appendChild(botonE);
     td.appendChild(botonM);

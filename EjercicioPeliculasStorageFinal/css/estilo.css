@@ -32,7 +32,20 @@ h1 {
   padding-top: 10px;
   margin-bottom: 10px;
 }
+th {
+  background-color:#4ba6db;
+}
 
+tr {
+  text-align: center;
+}
+
+tr:nth-child(odd) {
+  background-color:#c5bfbf;
+}
+tr:nth-child(even) {
+  background-color:white;
+}
 html{
   background-color: #ffffff;
 }
@@ -128,9 +141,12 @@ input[type=text],input[type=password]{
   -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
   box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
   border: solid 1px #cbc9c9;
-  margin-left: -5px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 13px; 
   padding-left: 10px;
+  border-radius: 30px;
+  text-align: center;
 }
 
 input[type=password]{
@@ -152,48 +168,6 @@ input[type=password]{
   box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
   border: solid 0px #cbc9c9;
 }
-
-.gender {
-  margin-left: 30px;
-  margin-bottom: 30px;
-}
-
-.accounttype{
-  margin-left: 8px;
-  margin-top: 20px;
-}
-
-a.button {
-  font-size: 14px;
-  font-weight: 600;
-  color: white;
-  padding: 6px 25px 0px 20px;
-  margin: 10px 8px 20px 0px;
-  display: inline-block;
-  float: right;
-  text-decoration: none;
-  width: 50px; height: 27px; 
-  -webkit-border-radius: 5px; 
-  -moz-border-radius: 5px; 
-  border-radius: 5px; 
-  background-color: #3a57af; 
-  -webkit-box-shadow: 0 3px rgba(58,87,175,.75); 
-  -moz-box-shadow: 0 3px rgba(58,87,175,.75); 
-  box-shadow: 0 3px rgba(58,87,175,.75);
-  transition: all 0.1s linear 0s; 
-  top: 0px;
-  position: relative;
-}
-
-a.button:hover {
-  top: 3px;
-  background-color:#2e458b;
-  -webkit-box-shadow: none; 
-  -moz-box-shadow: none; 
-  box-shadow: none;
-  
-}
-
 
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
@@ -225,26 +199,19 @@ h1,h2,h3,h4,h5,h6 {
 
 .table {
 	width:100%;
-	border:1px solid #EEEEEE;
+	border: 3px solid black;
 }
 
 .table-header {
-	/*display:flex;
-	width:100%;*/
 	background-color: #3399ff;
-	padding:(12px * 1.5) 0;
+  padding:(12px * 1.5) 0;
+  border-color: red;
+  border: 2px solid black;
+  border-radius: 30px;
 }
 
 .table-body {
     background:#6003;
-	/*display:flex;
-	width:100%;
-    padding:(12 * 1.5) 0; /*
-    
-	
-	
-	/* background:#EEEEEE; */
-
 }
 
 .table-data, .header__item {
@@ -256,12 +223,69 @@ h1,h2,h3,h4,h5,h6 {
 	text-transform:uppercase;
 }
 
-.filter__link {
-	color:white;
-	text-decoration: none;
-	position:relative;
-	display:inline-block;
-	padding-left:24px;
-	padding-right:24px;
-	
+/* -------------------------------------
+                BOTONES
+ --------------------------------------*/
+.botonE{
+  
+  color: #0099CC;
+  background: white;
+  border: 2px solid #0099CC;
+  border-radius: 30px;
+  padding: 2px;
+  font-weight: bold;
+  border-color: black;
 }
+.botonE:hover{
+  opacity: 0.6;
+  text-decoration:none;
+  background: red;
+  font-weight: bold;
+  color: black;
+}
+
+
+.botonM{
+  
+  color: #0099CC;
+  background: white;
+  border: 2px solid #0099CC;
+  border-radius: 30px;
+  padding: 2px;
+  font-weight: bold;
+  border-color: black;
+}
+.botonM:hover{
+  opacity: 0.6;
+  text-decoration:none;
+  background: green;
+  font-weight: bold;
+  color: white;
+}
+
+.boton1{
+  
+  padding: 3px;
+  padding-left: auto;
+  padding-right: auto;
+  font-family: helvetica;
+  font-weight: 300;
+  
+  font-style: italic;
+  color: black;
+  background-color: #aeb3ae;
+  border-radius: 20px;
+  border-color: black;
+  border: 3px double #959695;
+}
+.boton1:hover{
+  opacity: 0.6;
+  text-decoration:none;
+}
+
+
+
+
+
+
+
