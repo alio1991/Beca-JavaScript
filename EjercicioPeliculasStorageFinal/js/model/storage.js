@@ -1,5 +1,6 @@
 class GestorPeliculas {
     
+    
     constructor(){
         if(localStorage.getItem("peliculas") == null){
             localStorage.setItem("peliculas",JSON.stringify([]))
