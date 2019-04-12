@@ -128,7 +128,7 @@ function creaObjetoPeliDeFormulario(){
     return peli;
 }
 function popUpEliminar(){
-    var popup = document.getElementById("titulo");//"¿Seguro que quieres Borrar?";//document.getElementById("myPopup");
-    console.log(popup)
-    popup.classList.toggle("show");
+    //var popup = document.getElementById("titulo");//"¿Seguro que quieres Borrar?";//document.getElementById("myPopup");
+    //console.log(popup)
+    //popup.classList.toggle("show");
 }
