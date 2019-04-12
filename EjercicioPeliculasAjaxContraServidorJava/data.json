@@ -1,0 +1,17 @@
+[{
+    "titulo":"El señor de los colmillos (Dracula)",
+    "director":"Directorcillo",
+    "cod":"AAA-11111-AA",
+    "genero":"Drama",
+    "fecha":"12-09-01",
+    "valoracion":"9" 
+},
+{
+    "titulo":"Harry el de potes",
+    "director":"F.G.T",
+    "cod":"BBB-11111-AA",
+    "genero":"Ciencia Ficción",
+    "fecha":"12-10-01",
+    "valoracion":"8"
+}
+]

@@ -15,7 +15,7 @@
     <section>
         <article>
                 <!--  <h1>Registrar películas</h1> -->
-                <form>
+                <form id="formulario">
                     <!-- <p>Título</p>  -->
                     <input 
                         id="titulo"
@@ -38,8 +38,8 @@
                         type="text" 
                         name="id"
                         placeholder="XXX-00000-ZZ"
-                        required
                         pattern="[[A-Z]{3}-[0-9]{5}-[A-Z]{2}"
+                        required
                     />  <br/><br/>
 
                     <!--<p>Genero</p> -->
@@ -65,7 +65,7 @@
                         min="0" 
                         max="10" 
                     /><br/><br/>
-                    <button id="botonFormulario" type="reset" onclick="insertaPeli()">Enviar</button>
+                    <button id="botonFormulario" type="reset" onclick="comienza()">Enviar</button>
                     <br/><br/>
                 </form>
         </article>

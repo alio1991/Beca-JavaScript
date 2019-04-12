@@ -5,45 +5,45 @@
     <link href="css/estilo.css" rel="stylesheet">
     <title>Peliculas</title>
     <script type="text/javascript" src="js/model/pelicula.js"></script>
-    <script type="text/javascript" src="js/model/main.js"></script>
-    <script type="text/javascript" src="js/model/storage.js"></script>
+    <script type="text/javascript" src="js/controller/main.js"></script>
+    <script type="text/javascript" src="js/model/storageJSONLocal.js"></script>
     
 </head>
-<body>
+<body onload="carga()">
 <header><h1>Gestor Películas</h1></header>
 <br/>
     <section>
         <article>
                 <!--  <h1>Registrar películas</h1> -->
-                <form>
+                <form id="formulario">
                     <!-- <p>Título</p>  -->
                     <input 
-                        id="titulo"
+                        
                         type="text" 
+                        id="titulo"
                         name="titulo"
                         placeholder="Nombre de la película"
                         required
                     /><br/>
                     <!-- <p>Director</p> -->
                     <input 
-                        id="director"
                         type="text" 
+                        id="director"
                         name="director"
                         placeholder="Director de la película"
                         required
                     /><br/>
-                    <!--<p>COD-ID</p> -->
-                    <input 
-                        id="cod"
+                    <!--<p>codId-ID</p> -->
+                    <input id="codId"
                         type="text" 
                         name="id"
                         placeholder="XXX-00000-ZZ"
-                        required
                         pattern="[[A-Z]{3}-[0-9]{5}-[A-Z]{2}"
+                        required
                     />  <br/><br/>
 
                     <!--<p>Genero</p> -->
-                    <select id="genero" name="genero" id="genero">
+                    <select name="genero" id="genero">
                             <option value="drama">Drama</option>
                             <option value="comedia">Comedia</option>
                             <option value="ficcion">Ciencia Ficción</option>
@@ -52,20 +52,21 @@
 
                      <!--<p>Fecha publicación</p> -->
                     <input 
-                        id="fecha"
                         type="date" 
+                        id="fecha"
                         value="fecha_publicacion"
                     /><br/><br/>
 
                      <!--<p>Valoración</p> -->
                     <input 
-                        id="valoracion"
                         type="range" 
+                        id="valoracion"
                         name="valoracion"
                         min="0" 
                         max="10" 
                     /><br/><br/>
-                    <button id="botonFormulario" type="reset" onclick="insertaPeli()">Enviar</button>
+                    <button id="botonFormulario" type="reset" onclick="comienza()">Enviar</button>
+                    <br/><br/>
                 </form>
         </article>
     </section>
@@ -76,7 +77,7 @@
                     <table class="table">
                         <thead class="table-header">
                             <tr>
-                            <th>Título</th><th>Director</th><th>COD-ID</th><th>Genero</th><th>Fecha</th><th>Valoración</th><th></th>
+                            <th>Título</th><th>Director</th><th>cod-ID</th><th>Genero</th><th>Fecha</th><th>Valoración</th><th></th>
                             </tr>
                         </thead>
                         <tbody class="table-body" id="seccionTbody">

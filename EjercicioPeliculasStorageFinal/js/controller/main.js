@@ -12,6 +12,38 @@ Pelicula.prototype.setAtributos = function(titulo,director,cod,genero,fecha,valo
     this.valoracion=valoracion;
 }
 
+function comienza(){
+    if(document.getElementById("formulario").checkValidity()){
+        insertaPeli();
+    }else{
+        if(!document.getElementById("director").checkValidity()){
+            document.getElementById("director").value="ERRONEO";
+            //console.log("director")
+        }
+        if(!document.getElementById("cod").checkValidity()){
+            document.getElementById('cod').value="ERRONEO";
+            //console.log("cod")
+        }
+        if(!document.getElementById("genero").checkValidity()){
+            document.getElementById('genero').value="ERRONEO";
+            //console.log("genero")
+        }
+        if(!document.getElementById("valoracion").checkValidity()){
+            document.getElementById('valoracion').value="ERRONEO";
+            //console.log("genero")
+        }
+        if(!document.getElementById("fecha").checkValidity()){
+            document.getElementById('fecha').value="ERRONEO";
+            //console.log("fecha")
+        }
+        if(!document.getElementById("titulo").checkValidity()){
+            document.getElementById('titulo').value="ERRONEO";
+            //console.log("titulo")
+        }
+        
+    }
+    
+}
 function carga(){
     gestor = new GestorPeliculas(); 
     imprimeTabla();
@@ -107,7 +139,7 @@ function alternaBoton(a){
         boton.onclick = function() { cambiaPeli() };
     }else{
         boton.textContent="Enviar"
-        boton.onclick = function() { insertaPeli() };
+        boton.onclick = function() { comienza() };
     }
 }
 
